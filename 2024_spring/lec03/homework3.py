@@ -11,7 +11,7 @@ def cancellation(input_list, stop_word):
         if x == stop_word:
             break
         output_list.append(x)
-    return(output_list)
+    return output_list
 
 def copy_all_but_skip_word(input_list, skip_word):
     '''
@@ -24,7 +24,8 @@ def copy_all_but_skip_word(input_list, skip_word):
         if x == skip_word:
             continue
         output_list.append(x)
-    return(output_list)
+    return output_list
+
 
 
 def my_average(input_list):
@@ -36,5 +37,8 @@ def my_average(input_list):
     for x in input_list:
         sum = sum + x
     return sum / len(input_list)
+
+
+        
     
 
