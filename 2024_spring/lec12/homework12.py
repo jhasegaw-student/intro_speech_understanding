@@ -9,5 +9,8 @@ def synthesize(text, lang, filename):
     lang (str) - the language in which you want to synthesize it
     filename (str) - the filename in which it should be saved
     '''
-    raise RuntimeError("FAIL! You need to change this function so that it works!")
-
+    #raise RuntimeError("FAIL! You need to change this function so that it works!")
+    tts = gtts.gTTS(text, lang=lang)
+    tts.save(filename)
+    
+    
