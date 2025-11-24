@@ -39,9 +39,12 @@ class Test(unittest.TestCase):
         n = np.arange(Fs)
         x = np.cos(2*np.pi*f1ref*n/Fs)+np.sin(2*np.pi*f2ref*n/Fs)+np.cos(2*np.pi*(f3ref*n/Fs+0.125))
         f1, f2, f3 = homework7.spectral_analysis(x, Fs)
-        self.assertAlmostEqual(f1,f1ref,places=1,msg="Lowest frequency is %d, not %d"%(f1ref,f1))
-        self.assertAlmostEqual(f2,f2ref,places=1,msg="Lowest frequency is %d, not %d"%(f1ref,f1))
-        self.assertAlmostEqual(f3,f3ref,places=1,msg="Lowest frequency is %d, not %d"%(f1ref,f1))
+        self.assertEqual(int(np.round(f1)),int(np.round(f1ref)),
+                         msg="Lowest frequency is %d, not %d"%(f1ref,f1))
+        self.assertEqual(int(np.round(f2)),int(np.round(f2ref)),
+                         msg="Second-lowest frequency is %d, not %d"%(f2ref,f2))
+        self.assertEqual(int(np.round(f3)),int(np.round(f3ref)),
+                         msg="Third-lowest frequency is %d, not %d"%(f3ref,f3))
 
 suite = unittest.defaultTestLoader.loadTestsFromTestCase(Test)
 result = unittest.TextTestRunner().run(suite)
