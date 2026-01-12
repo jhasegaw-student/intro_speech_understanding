@@ -53,16 +53,4 @@ def spectral_analysis(x, Fs):
     f1, f2, f3: The three loudest frequencies (in Hertz)
       These should be sorted so f1 < f2 < f3.
     '''
-    N = len(x)
-    #W = dft_matrix(N)
-    #X = np.abs(np.matmul(W,x))
-    X = np.abs(np.fft.fft(x))
-    k1 = np.argmax(X[:int(N/2)])
-    X[k1] = 0
-    k2 = np.argmax(X[:int(N/2)])
-    X[k2] = 0
-    k3 = np.argmax(X[:int(N/2)])
-    frequencies = [ k*Fs/N for k in sorted([k1, k2, k3]) ]
-    return frequencies[0], frequencies[1], frequencies[2]
-    
-    
+    raise RuntimeError("You need to write this part")
