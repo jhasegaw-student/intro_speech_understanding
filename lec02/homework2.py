@@ -1,5 +1,6 @@
 '''
 This homework defines one method, called "arithmetic".
+To see help on 
 that method, type `help homework2.arithmetic`.
 '''
 
@@ -12,5 +13,15 @@ def arithmetic(x, y):
     isinstance(y,str)   return x+y         return str(x)+y
     isinstance(y,float) return x*int(y)    return x*y
     """
-    return 0
+    if isinstance(x,str):
+        if isinstance(y,str):
+            return x+y
+        else:
+            return x*int(y)
+    else:
+        if isinstance(y,str):
+            return str(x)+y
+        else:
+            return x*y
+
 
