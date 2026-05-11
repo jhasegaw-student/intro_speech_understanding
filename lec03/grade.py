@@ -1,7 +1,7 @@
 import unittest, homework3
 
 class Test(unittest.TestCase):
-    def test_wrods2characters(self):
+    def test_words2characters(self):
         words = [ 'hello', 1.234, True ]
         correct = ['h','e','l','l','o','1','.','2','3','4','T','r','u','e']
         characters = homework3.words2characters(words)
