@@ -14,5 +14,13 @@ def next_birthday(date, birthdays):
     '''
     birthday = (1,1)
     list_of_names = []
-    return birthday, list_of_names
+    for testdate in sorted(birthdays.keys()):
+        if testdate >= date:
+            return testdate, birthdays[testdate]
+            
+    # If we reach this point, there was no testdate after the input date
+    # so we should go back to the start of the year and return the first date in the dictionary
+    for testdate in sorted(birthdays.keys()):
+        return testdate, birthdays[testdate]
+    
     
